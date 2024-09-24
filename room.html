@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classy Room Categories</title>
+    <link rel="stylesheet" href="room.css">
+</head>
+<body>
+    <section id="room-categories">
+        <h1>Our Rooms</h1>
+        <div class="category-container">
+            <div class="category-box" data-category="1">
+                <img src="image/r1.jpg" alt="Deluxe Room" class="room-image">
+                <h2>Deluxe Room</h2>
+                <button class="book-btn">Book Now</button>
+            </div>
+            <div class="category-box" data-category="2">
+                <img src="image/r2.jpg" alt="Luxury Room" class="room-image">
+                <h2>Luxury Room</h2>
+                <button class="book-btn">Book Now</button>
+            </div>
+            <div class="category-box" data-category="3">
+                <img src="image/r3.jpg" alt="Suite" class="room-image">
+                <h2>Suite</h2>
+                <button class="book-btn">Book Now</button>
+            </div>
+            <div class="category-box" data-category="4">
+                <img src="image/r1.jpg" alt="Presidential Suite" class="room-image">
+                <h2>Presidential Suite</h2>
+                <button class="book-btn">Book Now</button>
+            </div>
+            <div class="category-box" data-category="5">
+                <img src="image/re.jpg" alt="Economy Room" class="room-image">
+                <h2>Economy Room</h2>
+                <button class="book-btn">Book Now</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="room-details" style="display: none;">
+        <h2>Room Gallery</h2>
+        <div class="gallery">
+            <div class="room-images" id="category-1" style="display: none;">
+                <img src="image/r1.jpg" alt="Deluxe Room Image 1">
+                <img src="image/r2.jpg" alt="Deluxe Room Image 2">
+                <img src="image/r3.jpg" alt="Deluxe Room Image 3">
+            </div>
+            <div class="room-images" id="category-2" style="display: none;">
+                <img src="image/r1.jpg" alt="Luxury Room Image 1">
+                <img src="image/r2.jpg" alt="Luxury Room Image 2">
+                <img src="image/r3.jpg" alt="Luxury Room Image 3">
+            </div>
+            <div class="room-images" id="category-3" style="display: none;">
+                <img src="image/r1.jpg" alt="Suite Image 1">
+                <img src="image/r2.jpg" alt="Suite Image 2">
+                <img src="image/r3.jpg" alt="Suite Image 3">
+            </div>
+            <div class="room-images" id="category-4" style="display: none;">
+                <img src="image/r1.jpg" alt="Presidential Suite Image 1">
+                <img src="image/r2.jpg" alt="Presidential Suite Image 2">
+                <img src="image/r3.jpg" alt="Presidential Suite Image 3">
+            </div>
+            <div class="room-images" id="category-5" style="display: none;">
+                <img src="image/r1.jpg" alt="Economy Room Image 1">
+                <img src="image/r2.jpg" alt="Economy Room Image 2">
+                <img src="image/r3.jpg" alt="Economy Room Image 3">
+            </div>
+        </div>
+        <button id="back-btn">Back to Categories</button>
+    </section>
+
+    <script>
+        // Redirect to booking.html when "Book Now" is clicked
+        document.querySelectorAll('.book-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                window.location.href = 'booking.html'; // Redirect to booking page
+            });
+        });
+
+        // Show room details when the room category is clicked
+        document.querySelectorAll('.category-box').forEach(box => {
+            box.addEventListener('click', () => {
+                const category = box.getAttribute('data-category');
+                showRoomDetails(category);
+            });
+        });
+
+        // Go back to the room categories
+        document.getElementById('back-btn').addEventListener('click', () => {
+            document.getElementById('room-details').style.display = 'none';
+            document.getElementById('room-categories').style.display = 'block';
+
+            document.querySelectorAll('.room-images').forEach(imageDiv => {
+                imageDiv.style.display = 'none';
+            });
+        });
+
+        // Function to display the room details
+        function showRoomDetails(category) {
+            document.getElementById('room-categories').style.display = 'none';
+            document.getElementById('room-details').style.display = 'block';
+
+            const selectedImages = document.getElementById('category-' + category);
+            selectedImages.style.display = 'flex';
+        }
+    </script>
+</body>
+</html>

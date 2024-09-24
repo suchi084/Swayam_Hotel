@@ -1,0 +1,134 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+h1 {
+    text-align: center;
+    padding: 20px 0;
+    color: #2c3e50;
+    font-size: 3em;
+    font-weight: bold;
+    letter-spacing: 2px;
+    background: linear-gradient(90deg, #f39c12, #8e44ad);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#room-categories {
+    text-align: center;
+    padding: 50px 0;
+    background: linear-gradient(45deg, #f1c40f, #e74c3c, #8e44ad);
+}
+
+.category-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 0 30px;
+}
+
+.category-box {
+    background: linear-gradient(145deg, #ffffff, #f0f0f0);
+    padding: 20px;
+    margin: 20px;
+    border-radius: 15px;
+    width: 250px; /* Adjusted for larger appearance */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+}
+
+.category-box:hover {
+    transform: scale(1.1);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(145deg, #f9f9f9, #e3e3e3);
+}
+
+.category-box img {
+    width: 100%;
+    height: 180px;
+    border-radius: 10px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.category-box img:hover {
+    transform: scale(1.05);
+}
+
+.category-box h2 {
+    font-size: 1.8em;
+    margin: 15px 0;
+    color: #2c3e50;
+    font-weight: bold;
+}
+
+.book-btn {
+    padding: 12px 25px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 1em;
+    border-radius: 30px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: 10px;
+}
+
+.book-btn:hover {
+    background-color: #2980b9;
+    transform: scale(1.05);
+}
+
+#room-details {
+    text-align: center;
+    padding: 50px 0;
+    background-color: #ecf0f1;
+}
+
+.gallery {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.room-images {
+    display: none;
+}
+
+.room-images img {
+    width: 300px;
+    margin: 10px;
+    border-radius: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.room-images img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+#back-btn {
+    padding: 10px 30px;
+    background-color: #8e44ad;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1em;
+    margin-top: 20px;
+    border-radius: 30px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#back-btn:hover {
+    background-color: #6c3483;
+    transform: scale(1.05);
+}
